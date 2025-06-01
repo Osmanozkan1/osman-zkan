@@ -1,66 +1,46 @@
-// Scroll animasyonlarını başlat (sadece bir kez çağrılmalı)
-AOS.init();
+// Sayfa yüklendiğinde çalışacaklar
+document.addEventListener("DOMContentLoaded", () => {
+  // ✅ Form gönderme butonuna tıklanırsa
+  const gonderButonu = document.getElementById("contact-submit");
+  if (gonderButonu) {
+    gonderButonu.addEventListener("click", function () {
+      const ad = document.querySelector('input[placeholder="Adınız"]').value.trim();
+      const email = document.querySelector('input[placeholder="E-posta"]').value.trim();
+      const konu = document.querySelector('input[placeholder="Konu"]').value.trim();
+      const mesaj = document.querySelector('textarea[placeholder="Mesajınız"]').value.trim();
 
+      if (!ad || !email || !mesaj) {
+        alert("Lütfen gerekli tüm alanları doldurun.");
+        return;
+      }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  alert('Mesajınız gönderildi! Teşekkürler.');
-  return false;
-}
-
-
-const projects = [
-  {
-    icon: 'fa-laptop-code',
-    title: 'Kişisel Portföy Web Sitesi',
-    desc: 'HTML5, CSS3, Bootstrap ile hazırlanmış kişisel site.'
-  },
-  {
-    icon: 'fa-palette',
-    title: 'UI Kit Tasarımı',
-    desc: 'Butonlar, kartlar, renk paleti ve grid sistemleri içerir.'
-  },
-  {
-    icon: 'fa-database',
-    title: 'Backend API',
-    desc: 'Node.js ve Express.js kullanılarak geliştirilen RESTful API.'
-  }
-];
-
-
-window.onload = function() {
-  const container = document.getElementById('project-cards');
-  if (container) {
-    projects.forEach(p => {
-      const col = document.createElement('div');
-      col.className = 'col-md-4 mb-4';
-      col.innerHTML = `
-        <div class="card project-card p-3 text-center">
-          <i class="fas ${p.icon} fa-3x mb-3 text-success"></i>
-          <h5 class="card-title">${p.title}</h5>
-          <p>${p.desc}</p>
-        </div>
-      `;
-      container.appendChild(col);
+      alert("Mesajınız başarıyla gönderildi. Teşekkür ederiz!");
+      document.querySelector("form").reset();
     });
   }
 
-  // Proje kartlarına animasyon ve tıklama
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectCards.forEach(card => {
-    card.addEventListener("click", () => {
-      const title = card.querySelector(".card-title")?.textContent || "Proje";
-      console.log(`"${title}" projesine tıklandı.`);
-    });
-
-    card.addEventListener("mouseover", () => {
-      card.style.transform = "scale(1.02)";
-      card.style.transition = "all 0.3s ease-in-out";
-    });
-
-    card.addEventListener("mouseout", () => {
-      card.style.transform = "scale(1)";
+  // ✅ Sayfa içi yumuşak geçiş (navbar bağlantıları gibi)
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const hedef = document.querySelector(this.getAttribute("href"));
+      if (hedef) {
+        hedef.scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
-};
+
+  // ✅ Sosyal medya ikonları tıklama logları
+  const github = document.querySelector('a[href*="github.com"]');
+  const instagram = document.querySelector('a[href*="instagram.com"]');
+  if (github) github.addEventListener("click", () => console.log("GitHub bağlantısına tıklandı."));
+  if (instagram) instagram.addEventListener("click", () => console.log("Instagram bağlantısına tıklandı."));
+
+  // ✅ İletişim bağlantıları tıklama logları
+  const mail = document.querySelector('a[href^="mailto:"]');
+  const tel = document.querySelector('a[href^="tel:"]');
+  const map = document.querySelector('a[href*="maps"]');
+  if (mail) mail.addEventListener("click", () => console.log("E-posta bağlantısına tıklandı."));
+  if (tel) tel.addEventListener("click", () => console.log("Telefon bağlantısına tıklandı."));
+  if (map) map.addEventListener("click", () => console.log("Konum bağlantısına tıklandı."));
+});
