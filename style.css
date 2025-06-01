@@ -1,0 +1,74 @@
+html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0f172a;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .section-title {
+    border-bottom: 3px solid #22c55e;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  .project-card {
+    background-color: #1e293b;
+    border: none;
+  }
+  .social-icons a {
+    color: #22c55e;
+    font-size: 1.6rem;
+    margin: 0 10px;
+  }
+  .btn-green {
+    background-color: #22c55e;
+    color: black;
+    font-weight: bold;
+  }
+  .social-icons a {
+    color: #22c55e;
+    font-size: 1.8rem;
+    margin: 0 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-icons a:hover {
+    color: #38bdf8;
+    transform: scale(1.2);
+  }
+#about i {
+  transition: transform 0.3s ease;
+}
+#about i:hover {
+  transform: scale(1.2);
+}
+.card-title {
+  font-weight: bold;
+  color: #fff;
+}
+.card-text {
+  color: #e2e8f0;
+}
+.social-icons a {
+  color: #22c55e;
+  font-size: 1.8rem;
+  margin: 0 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+.btn-green {
+  background-color: #22c55e;
+  color: black;
+  font-weight: bold;
+}
+footer a:hover {
+  color: #22c55e;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #38bdf8; 
+  transition: 0.3s ease;
+}
+  
