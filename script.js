@@ -1,6 +1,6 @@
-// Sayfa yüklendiğinde çalışacaklar
+
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Form gönderme butonuna tıklanırsa
+
   const gonderButonu = document.getElementById("contact-submit");
   if (gonderButonu) {
     gonderButonu.addEventListener("click", function () {
@@ -18,25 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("form").reset();
     });
   }
+//sayfa güzel dursun diye int den aldım
 
-  // ✅ Sayfa içi yumuşak geçiş (navbar bağlantıları gibi)
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const hedef = document.querySelector(this.getAttribute("href"));
-      if (hedef) {
-        hedef.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-  // ✅ Sosyal medya ikonları tıklama logları
   const github = document.querySelector('a[href*="github.com"]');
   const instagram = document.querySelector('a[href*="instagram.com"]');
   if (github) github.addEventListener("click", () => console.log("GitHub bağlantısına tıklandı."));
   if (instagram) instagram.addEventListener("click", () => console.log("Instagram bağlantısına tıklandı."));
 
-  // ✅ İletişim bağlantıları tıklama logları
   const mail = document.querySelector('a[href^="mailto:"]');
   const tel = document.querySelector('a[href^="tel:"]');
   const map = document.querySelector('a[href*="maps"]');

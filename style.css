@@ -31,14 +31,12 @@ body {
   color: #e2e8f0;
 }
 
-/* Butonlar */
 .btn-green {
   background-color: #22c55e;
   color: black;
   font-weight: bold;
 }
 
-/* Sosyal İkonlar */
 .social-icons a {
   color: #22c55e;
   font-size: 1.8rem;
@@ -51,7 +49,6 @@ body {
   transform: scale(1.2);
 }
 
-/* Hakkımda kısmı icon hover */
 #about i {
   transition: transform 0.3s ease;
 }
@@ -60,7 +57,6 @@ body {
   transform: scale(1.2);
 }
 
-/* Footer */
 footer a {
   color: #22c55e;
   text-decoration: none;
@@ -71,7 +67,6 @@ footer a:hover {
   color: white;
 }
 
-/* Footer sosyal medya linkleri */
 .footer-social a {
   color: white;
   font-weight: bold;
@@ -83,7 +78,6 @@ footer a:hover {
   color: red;
 }
 
-/* Footer iletişim (konum, mail, telefon) */
 footer .contact-link,
 .footer-link {
   color: white;
