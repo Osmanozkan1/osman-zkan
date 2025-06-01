@@ -186,5 +186,13 @@
 
 
 <script src="script.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash === "#contact") {
+      history.replaceState(null, null, window.location.pathname);
+    }
+  });
+</script>
+
 </body>
 </html>
