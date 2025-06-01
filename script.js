@@ -1,14 +1,14 @@
 // Scroll animasyonlarını başlat (sadece bir kez çağrılmalı)
 AOS.init();
 
-// Form gönderim işlemi
+
 function handleSubmit(event) {
   event.preventDefault();
   alert('Mesajınız gönderildi! Teşekkürler.');
   return false;
 }
 
-// Dinamik projeler dizisi
+
 const projects = [
   {
     icon: 'fa-laptop-code',
